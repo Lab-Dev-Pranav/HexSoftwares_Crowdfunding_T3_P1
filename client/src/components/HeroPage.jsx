@@ -72,7 +72,7 @@ export default function Hero() {
                     <span>₹{project.goalAmount.toLocaleString()} goal</span>
                   </div>
                   <div className="funding-info">
-                    <span style={{ color: "#e67e22" }}>
+                    <span style={{ color: "#ffbe86" }}>
                       ₹{(project.goalAmount - project.currentAmount).toLocaleString()} remaining
                     </span>
                   </div>

@@ -36,18 +36,28 @@ export default function ProjectList() {
               <Link to={`/project/${p._id}`} style={{ textDecoration: 'none', color: '#2b6cb0' }}>{p.title}</Link>
             </h3>
             <div style={{ marginBottom: 8, color: '#666' }}>{p.category}</div>
-            {/* <div style={{ marginBottom: 8 }}>{p.description?.slice(0, 80)}{p.description?.length > 80 ? '...' : ''}</div> */}
+
+
+           {/* display View Details btn only if user login else display login btn */}
           
-            <div style={{ marginTop: 12 }}>
-              <Link to={`/project/${p._id}`} style={{
-                background: '#3182ce',
-                color: '#fff',
-                padding: '8px 16px',
-                borderRadius: 6,
-                textDecoration: 'none',
-                fontWeight: 600,
-              }}>View Details</Link>
-            </div>
+
+            {window.user && (
+          <Link to={`/project/${p._id}`} style={{ marginTop: 12, padding: '8px 0', borderRadius: 8, background: '#4f46e5', color: '#fff', fontWeight: 600, textAlign: 'center', textDecoration: 'none' }}>
+              View Details
+            </Link>
+        )}
+
+          {!window.user && (
+          <Link to="/auth" style={{ marginTop: 12, padding: '8px 0', borderRadius: 8, background: '#4f46e5', color: '#fff', fontWeight: 600, textAlign: 'center', textDecoration: 'none' }}>
+              Login to View Details
+            </Link>
+        )}
+
+           
+
+
+
+
           </div>
         ))}
       </div>

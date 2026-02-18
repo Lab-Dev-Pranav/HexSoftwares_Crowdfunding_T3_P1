@@ -1,0 +1,145 @@
+.footer {
+  background: #0e1d5b;
+  color: #cbd5f5;
+  border-top: 1px solid #1e293b;
+  margin-top: 60px;     
+  border-radius: 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px 25px;
+}
+
+/* Top Layout */
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 1.5fr;
+  gap: 50px;
+  margin-bottom: 40px;
+}
+
+/* Brand */
+.footer-brand h2 {
+  color: white;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #94a3b8;
+}
+
+/* Links */
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-links h3 {
+  color: white;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  display: block;
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 8px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.footer-links a:hover {
+  color: white;
+  transform: translateX(3px);
+}
+
+/* Newsletter */
+.footer-newsletter h3 {
+  color: white;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.footer-newsletter p {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 14px;
+}
+
+.newsletter-box {
+  display: flex;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.newsletter-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 10px 12px;
+  color: white;
+  font-size: 14px;
+  outline: none;
+}
+
+.newsletter-box button {
+  background: #4f46e5;
+  border: none;
+  padding: 0 16px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.newsletter-box button:hover {
+  background: #6366f1;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  border-top: 1px solid #1e293b;
+  padding-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.footer-bottom a {
+  margin-left: 18px;
+  color: #64748b;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.footer-bottom a:hover {
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

@@ -44,6 +44,7 @@ export default function ContributePage() {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
+      console.log('Token used for contribution:', token);
       const res = await fetch(`/api/projects/${project._id}/contribute`, {
         method: 'POST',
         headers: {

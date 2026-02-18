@@ -8,7 +8,7 @@ export default function CreateUpdate({ onUpdateCreated }) {
   const [content, setContent] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  // Retrieve token from localStorage
+  // retrieve token from localStorage
   const token = localStorage.getItem('token');
 
   const handleSubmit = async (e) => {

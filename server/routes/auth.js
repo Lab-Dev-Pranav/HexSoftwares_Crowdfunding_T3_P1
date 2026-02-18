@@ -5,7 +5,7 @@ import User from '../models/User.js';
 
 const router = express.Router();
 
-// register
+// register route
 router.post('/register', async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
@@ -14,7 +14,7 @@ router.post('/register', async (req, res) => {
     const hashed = await bcrypt.hash(password, 10);
     const user = new User({ name, email, password: hashed, role });
     await user.save();
-    // Generate JWT token for auto-login
+    // generate JWT 
     const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1d' });
     res.status(201).json({
       message: 'User registered',
@@ -26,7 +26,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// login
+// login rou
 router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;

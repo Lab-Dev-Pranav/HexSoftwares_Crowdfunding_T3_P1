@@ -36,7 +36,7 @@ export default function ProjectDetails() {
     ? new Date(project.createdAt).toLocaleDateString()
     : null;
 
-  // Calculate investment percentage for each contribution
+  // clculate investment % for each contribution
   const getInvestmentPercent = (amount) => {
     if (!project.goalAmount) return 0;
     return ((amount / project.goalAmount) * 100).toFixed(2);
@@ -45,7 +45,7 @@ export default function ProjectDetails() {
   return (
     <div style={styles.page}>
       <div style={styles.card}>
-        {/* Creator Section */}
+        {/* creator Section */}
         <div style={styles.creatorSection}>
           <div style={styles.avatar}>
             {creatorName[0]?.toUpperCase() || 'U'}
@@ -60,10 +60,10 @@ export default function ProjectDetails() {
           </div>
         </div>
 
-        {/* Title */}
+        {/* title */}
         <h2 style={styles.title}>{project.title}</h2>
 
-        {/* Description */}
+        {/* description */}
         <p style={styles.description}>{project.description}</p>
 
         {/* Funding */}
@@ -93,7 +93,7 @@ export default function ProjectDetails() {
           </div>
         </div>
 
-        {/* Meta Info */}
+   
         <div style={styles.metaGrid}>
           <div><b>Status:</b> {project.status}</div>
           {deadline && <div><b>Deadline:</b> {deadline}</div>}
@@ -103,17 +103,14 @@ export default function ProjectDetails() {
 
 
 
-        {/* Buttons */}
-
-
-
+              {/* actions */}
         {window.user?.role === "user" && (
           <div style={styles.buttonRow}>
             <a href={`/project/${project._id}/contribute`} style={{ ...styles.primaryBtn, textAlign: 'center', textDecoration: 'none', display: 'inline-block' }}>Contribute</a>
           </div>
         )}
 
-        {/* Edit Project button removed */}
+     
         {
           window.user?.role === "creator" && (
             <div style={styles.buttonRow}>
@@ -122,7 +119,7 @@ export default function ProjectDetails() {
           )
         }
 
-        {/* Investors List */}
+        {/* contributers List */}
         {contributions.length > 0 && (
           <div style={{ marginTop: 16 }}>
             <div style={{ fontWeight: 600, marginBottom: 8 }}>Investors</div>

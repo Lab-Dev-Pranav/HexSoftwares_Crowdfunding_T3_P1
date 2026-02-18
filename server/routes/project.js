@@ -6,14 +6,23 @@ import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
 
 const router = express.Router();
+// Get the most invested project (highest currentAmount, but not fully funded)
+router.get('/top-invested', async (req, res) => {
+  try {
+    const project = await Project.findOne({ status: 'active' })
+      .sort({ currentAmount: -1 })
+      .populate('creatorId', 'name username email');
+    if (!project) return res.status(404).json({ message: 'No active projects found' });
+    res.json(project);
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to fetch top invested project', error: err.message });
+  }
+});
 
-// Get all projects
+// get all projects
 router.get('/', async (req, res) => {
   try {
     const projects = await Project.find().populate('creatorId', 'name username email');
-
-
-
     res.json(projects);
   } catch (err) {
     res.status(500).json({ message: 'Failed to fetch projects', error: err.message });
@@ -74,7 +83,7 @@ router.post('/:id/updates', authenticate, requireCreator, async (req, res) => {
   }
 });
 
-// Get all updates for a project
+// get all updates for a project
 router.get('/:id/updates', async (req, res) => {
   try {
     const updates = await Update.find({ projectId: req.params.id }).sort({ createdAt: -1 });
@@ -84,7 +93,7 @@ router.get('/:id/updates', async (req, res) => {
   }
 });
 
-// Get a single update by update id
+// get a single update by update id
 router.get('/updates/:updateId', async (req, res) => {
   try {
     const update = await Update.findById(req.params.updateId);
@@ -173,13 +182,13 @@ router.put('/:id', authenticate, requireCreator, async (req, res) => {
     const project = await Project.findById(req.params.id);
     if (!project) return res.status(404).json({ message: 'Not found' });
 
-    // Only allow the creator to update their project
+    // only allow the creator to update their project
     const userId = req.user.id || req.user._id;
     if (String(project.creatorId) !== String(userId)) {
       return res.status(403).json({ message: 'Only the creator can edit this project' });
     }
 
-    // Only allow updating certain fields
+    // only allow updating certain fields
     const { title, description, goalAmount, category, deadline, status } = req.body;
     if (title !== undefined) project.title = title;
     if (description !== undefined) project.description = description;

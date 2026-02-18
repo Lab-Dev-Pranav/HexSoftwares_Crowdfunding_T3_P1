@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 
   import Hero from './components/HeroPage';
@@ -9,7 +9,7 @@ import ProjectList from './components/ProjectList';
 import ProjectDetails from './components/ProjectDetails';
 import ContributePage from './pages/ContributePage';
 import EditProject from './pages/EditProject';
-import { Navigate } from 'react-router-dom';
+import Footer from './pages/Footer';
 
 import './App.css'
 
@@ -43,10 +43,11 @@ function App() {
     }
   };
 
-  const CreatorRoute = ({ children }) => {
-    
-    if (window.user?.role == 'creator') return <EditProject />;
-
+  // Middleware to require authentication
+  const RequireAuth = ({ children }) => {
+    if (!user) {
+      return <Navigate to="/" replace />;
+    }
     return children;
   };
   return (
@@ -56,11 +57,7 @@ function App() {
 
           <nav className="navbar">
             <div className="navbar-left">
-              <h1 ><a className="navtitle" href="/" style={{ textDecoration: 'none', color: 'inherit' }}>Crowdfunding</a></h1>
-
-
-            
-
+              <h1 ><a className="navtitle" href="/" style={{fontSize:'30px', textDecoration: 'none', color: 'inherit' }}>FundStarter</a></h1>
             </div>
             <div>
               
@@ -107,13 +104,16 @@ function App() {
           <Routes>
             <Route path="/" element={<><Hero /><ProjectList /></>} />
             <Route path="/create-project" element={<CreateProject />} />
-            <Route path="/project/:id" element={<ProjectDetails />} />
-            <Route path="/project/:id/contribute" element={<ContributePage />} />
+            <Route path="/project/:id" element={<RequireAuth><ProjectDetails /></RequireAuth>} />
+            <Route path="/project/:id/contribute" element={<RequireAuth><ContributePage /></RequireAuth>} />
             {/* /project/${project._id}/edit */}
-                <Route path="/project/:id/edit" element={<EditProject />} />
+            <Route path="/project/:id/edit" element={<EditProject />} />
             <Route path="/auth" element={<AuthPage onLogin={handleLogin} />} />
           </Routes>
         </main>
+
+        <Footer />
+
       </div>
     </Router>
   );

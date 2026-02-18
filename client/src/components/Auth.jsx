@@ -66,8 +66,7 @@ export default function Auth({ onLogin }) {
       fontFamily: 'Arial, sans-serif',
       padding: '30px 16px',
       borderRadius: '12px',
-      //  margin: '40px auto',
-      //  maxWidth: '1000px',
+ 
     },
     wrapper: {
       width: '100%',

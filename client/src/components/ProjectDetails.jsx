@@ -45,7 +45,7 @@ export default function ProjectDetails() {
   return (
     <div style={styles.page}>
       <div style={styles.card}>
-        {/* creator Section */}
+ 
         <div style={styles.creatorSection}>
           <div style={styles.avatar}>
             {creatorName[0]?.toUpperCase() || 'U'}
@@ -60,13 +60,13 @@ export default function ProjectDetails() {
           </div>
         </div>
 
-        {/* title */}
+   
         <h2 style={styles.title}>{project.title}</h2>
 
-        {/* description */}
+       
         <p style={styles.description}>{project.description}</p>
 
-        {/* Funding */}
+   
         <div style={styles.section}>
           <div style={styles.sectionTitle}>Funding Progress</div>
 
@@ -119,7 +119,7 @@ export default function ProjectDetails() {
           )
         }
 
-        {/* contributers List */}
+        {/* contributors list */}
         {contributions.length > 0 && (
           <div style={{ marginTop: 16 }}>
             <div style={{ fontWeight: 600, marginBottom: 8 }}>Investors</div>

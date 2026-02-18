@@ -43,7 +43,7 @@ function App() {
     }
   };
 
-  // Middleware to require authentication
+  // middleware to require authentication
   const RequireAuth = ({ children }) => {
     if (!user) {
       return <Navigate to="/" replace />;
@@ -106,7 +106,7 @@ function App() {
             <Route path="/create-project" element={<CreateProject />} />
             <Route path="/project/:id" element={<RequireAuth><ProjectDetails /></RequireAuth>} />
             <Route path="/project/:id/contribute" element={<RequireAuth><ContributePage /></RequireAuth>} />
-            {/* /project/${project._id}/edit */}
+      
             <Route path="/project/:id/edit" element={<EditProject />} />
             <Route path="/auth" element={<AuthPage onLogin={handleLogin} />} />
           </Routes>

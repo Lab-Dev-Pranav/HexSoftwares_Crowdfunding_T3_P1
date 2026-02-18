@@ -8,7 +8,7 @@ const projectSchema = new mongoose.Schema({
   creatorId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
      category: { type: String },
   status: { type: String, enum: ['active', 'funded', 'expired'], default: 'active' },
-  returnPercentage: { type: Number, required: true }, // Promised return percentage
+  returnPercentage: { type: Number, required: true , immutable: true }, 
    deadline: { type: Date },
   createdAt: { type: Date, default: Date.now }
 });

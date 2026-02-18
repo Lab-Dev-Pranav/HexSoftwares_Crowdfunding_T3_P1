@@ -6,7 +6,7 @@ import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
 
 const router = express.Router();
-// Get the most invested project (highest currentAmount, but not fully funded)
+
 router.get('/top-invested', async (req, res) => {
   try {
     const project = await Project.findOne({ status: 'active' })
@@ -63,7 +63,7 @@ router.post('/:id/contribute', authenticate, async (req, res) => {
   }
 });
 
-// Create a project update
+// create a project update
 router.post('/:id/updates', authenticate, requireCreator, async (req, res) => {
   try {
     const { title, content } = req.body;
@@ -182,13 +182,13 @@ router.put('/:id', authenticate, requireCreator, async (req, res) => {
     const project = await Project.findById(req.params.id);
     if (!project) return res.status(404).json({ message: 'Not found' });
 
-    // only allow the creator to update their project
+
     const userId = req.user.id || req.user._id;
     if (String(project.creatorId) !== String(userId)) {
       return res.status(403).json({ message: 'Only the creator can edit this project' });
     }
 
-    // only allow updating certain fields
+    
     const { title, description, goalAmount, category, deadline, status } = req.body;
     if (title !== undefined) project.title = title;
     if (description !== undefined) project.description = description;

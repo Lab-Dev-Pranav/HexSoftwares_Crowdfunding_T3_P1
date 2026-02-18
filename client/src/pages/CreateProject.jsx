@@ -26,7 +26,7 @@ export default function CreateProject() {
     setError('');
     setLoading(true);
     try {
-      // Get user from localStorage
+
       const userStr = localStorage.getItem('user');
       if (!userStr) throw new Error('User not logged in');
       const user = JSON.parse(userStr);

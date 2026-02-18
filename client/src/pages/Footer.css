@@ -12,7 +12,7 @@
   padding: 60px 20px 25px;
 }
 
-/* Top Layout */
+
 .footer-top {
   display: grid;
   grid-template-columns: 1.5fr 2fr 1.5fr;
@@ -20,7 +20,7 @@
   margin-bottom: 40px;
 }
 
-/* Brand */
+
 .footer-brand h2 {
   color: white;
   font-size: 22px;
@@ -33,7 +33,7 @@
   color: #94a3b8;
 }
 
-/* Links */
+
 .footer-links {
   display: flex;
   justify-content: space-between;
@@ -60,7 +60,7 @@
   transform: translateX(3px);
 }
 
-/* Newsletter */
+
 .footer-newsletter h3 {
   color: white;
   font-size: 16px;
@@ -105,7 +105,7 @@
   background: #6366f1;
 }
 
-/* Bottom Bar */
+
 .footer-bottom {
   border-top: 1px solid #1e293b;
   padding-top: 18px;
@@ -127,7 +127,7 @@
   color: white;
 }
 
-/* Responsive */
+
 @media (max-width: 900px) {
   .footer-top {
     grid-template-columns: 1fr;

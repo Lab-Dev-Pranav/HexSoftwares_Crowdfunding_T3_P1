@@ -7,7 +7,7 @@ export default function Footer() {
 
         <div className="footer-top">
 
-          {/* Brand */}
+
           <div className="footer-brand">
             <h2>FundStarter</h2>
             <p>
@@ -16,7 +16,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Links */}
+
           <div className="footer-links">
             <div>
               <h3>Platform</h3>
@@ -40,7 +40,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Newsletter */}
+
           <div className="footer-newsletter">
             <h3>Stay in the loop</h3>
             <p>Get updates on trending campaigns.</p>
@@ -53,7 +53,7 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom */}
+
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} FundStarter</p>
 

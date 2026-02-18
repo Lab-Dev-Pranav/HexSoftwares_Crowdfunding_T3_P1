@@ -38,7 +38,7 @@ export default function ProjectList() {
             <div style={{ marginBottom: 8, color: '#666' }}>{p.category}</div>
 
 
-           {/* display View Details btn only if user login else display login btn */}
+
           
 
             {window.user && (

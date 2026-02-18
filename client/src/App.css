@@ -1,0 +1,83 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #bdbdbd;
+  margin: 0 ;
+  padding: 0;
+}
+
+.navtitle{
+  font-size: 70px;
+  color: #2d2d2d;
+  text-align: center;
+  margin: 0px 0px 0px 0px ; 
+}
+
+.container {
+  max-width: 100%;
+  margin: 2rem auto;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 2rem;
+}
+
+button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+button:hover {
+  background: #0056b3;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+
+
+
+li {
+  background: #f1f1f1;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.auth-box {
+  max-width: auto;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 1rem;
+}
+
+.error {
+  color: #d32f2f;
+  margin-top: 1rem;
+}
+
+
+.navbar-left {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2d2d2d;
+  display: flex;
+  align-items: center;
+}
+
+.create-project-button{
+  margin-left: 10px;
+  padding: 5px 10px;
+}

@@ -1,0 +1,60 @@
+
+:root {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 15px;
+  color: #222;
+  background: #ffffff;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #fafbfc;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s;
+  padding: 0.1em 0.2em;
+}
+a:hover {
+  color: #0056b3;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: #ffffff;
+  padding: 5px;
+margin: -50px 0px 0px 0px;
+
+}
+
+.navbar a, .navbar button {
+  color: #222;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  transition: background 0.15s, color 0.15s;
+}
+.navbar a:hover, .navbar button:hover {
+  background: #f3f6fa;
+  color: #007bff;
+}
+
+h1 {
+  color: #23272f;
+  text-align: center;
+  font-size: 1.7rem;
+  margin: 1.2rem 0 1.2rem 0;
+  font-weight: 600;
+}

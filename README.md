@@ -1,4 +1,4 @@
-# Crowdfunding Platform
+# FundStarter The Crowdfunding Platform
 
 A full-stack web application for project fundraising and contributions.
 
